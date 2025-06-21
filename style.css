@@ -1,0 +1,534 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #000000;
+  color: white;
+}
+h2 {
+  color: #fff;
+}
+.video-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.5;
+}
+.content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  padding-top: 20%;
+  font-size: 2em;
+}
+.navbar-cont {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  align-items: center;
+  width: max-content;
+  height: 55px;
+  border: 1px solid white;
+  border-radius: 20px;
+  margin: auto;
+  list-style: none;
+  margin-top: 4rem;
+  box-shadow: 0 0 14px rgb(202, 187, 187);
+  transform: scale(0.95);
+  animation: fadeScaleIn 1.8s ease-in forwards;
+}
+.navbar-contact {
+  margin-right: 1.5rem;
+}
+.navbar-home,
+.navbar-skills,
+.navbar-projects,
+.navbar-contact,
+.navbar-about {
+  transition: 0.3s ease;
+}
+
+.navbar-home:hover,
+.navbar-skills:hover,
+.navbar-projects:hover,
+.navbar-contact:hover,
+.navbar-about:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+.typing {
+  width: 0;
+  font-size: 2rem;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: none;
+  animation: typing 5s steps(30, end) forwards, blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 22ch;
+  } /* Adjust to match text length */
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+.typing {
+  font-family: "Edu NSW ACT Hand Pre", cursive;
+  font-size: 2rem;
+}
+.name {
+  color: #7788e5;
+  font-size: 2.5rem;
+}
+.main-info {
+  width: 50%;
+  height: 50%;
+  margin: auto;
+  border: 1px solid white;
+  box-shadow: 0 0 14px rgb(202, 187, 187);
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  transform: scale(0.95);
+  animation: fadeScaleIn 0.8s ease-in forwards;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.13);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+@keyframes fadeScaleIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.main-info-text {
+  width: 50%;
+  height: 50%;
+  padding: 2rem;
+  margin-right: 1rem;
+}
+
+.img-fluid {
+  width: 180px;
+  height: 170px;
+  border-radius: 50%;
+  margin: auto;
+  border: 3px solid white;
+  margin-left: 6rem;
+  box-shadow: 0 0 14px rgb(202, 187, 187);
+  transition: 0.3s ease;
+}
+.img-fluid:hover {
+  transform: scale(1.6);
+}
+
+.button {
+  background-color: #ffffff00;
+  color: #fff;
+  width: 8.5em;
+  height: 2.9em;
+  border: #3654ff 0.2em solid;
+  border-radius: 11px;
+  text-align: center;
+  transition: all 0.6s ease;
+}
+
+.button:hover {
+  background-color: #3654ff;
+  cursor: pointer;
+}
+.skills-container {
+  border: 1px solid white;
+  border-radius: 15px;
+  width: 50%;
+  margin: auto;
+  margin-top: 2rem;
+  box-shadow: 0 0 14px rgb(202, 187, 187);
+  transform: scale(0.95);
+  animation: fadeScaleIn 0.8s ease-in forwards;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.13);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.skills-img {
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  border-radius: 15px;
+  width: 10rem;
+  height: 8rem;
+  background-color: white;
+  transition: 0.3s ease;
+}
+.skills-img:hover {
+  transform: scale(1.1);
+}
+.img {
+  width: 100px;
+  height: 100px;
+}
+.skillsname {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+}
+.img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+}
+@media (max-width: 480px) {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .navbar-cont {
+    margin: auto;
+    width: 50%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    padding: 0;
+    margin-top: 2rem;
+  }
+  .separator {
+    transform: rotate(90deg);
+    display: none;
+  }
+
+  .navbar-contact {
+    margin-right: 0;
+  }
+  .navbar-home,
+  .navbar-skills,
+  .navbar-projects,
+  .navbar-contact,
+  .navbar-about {
+    transition: 0.3s ease;
+  }
+
+  .navbar-home:hover,
+  .navbar-skills:hover,
+  .navbar-projects:hover,
+  .navbar-contact:hover,
+  .navbar-about:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+  }
+  .main-info {
+    width: 80%;
+    height: 50%;
+    margin: auto;
+    border: 1px solid white;
+    box-shadow: 0 0 14px rgb(202, 187, 187);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    transform: scale(0.95);
+    animation: fadeScaleIn 0.8s ease-in forwards;
+  }
+  .main-info-text {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 50%;
+    justify-content: center;
+    align-items: ;
+  }
+  .typing {
+    font-size: 1rem;
+  }
+  .name {
+    font-size: 1rem;
+  }
+  .img-fluid {
+    width: 150px;
+    height: 150px;
+    margin-left: 0;
+    margin-top: 1rem;
+  }
+  .skills-container {
+    width: 80%;
+    margin: auto;
+    margin-top: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 0 14px rgb(202, 187, 187);
+    transform: scale(0.95);
+    animation: fadeScaleIn 0.8s ease-in forwards;
+  }
+  .image-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  .img {
+    width: 3rem;
+    height: 3rem;
+  }
+  .skills-img {
+    width: 4rem;
+    height: 4rem;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.projects-container {
+  width: 50%;
+  margin: auto;
+  border: 1px solid white;
+  box-shadow: 0 0 14px rgb(202, 187, 187);
+  border-radius: 15px;
+  margin-top: 2rem;
+  margin-bottom: 20px;
+  transform: scale(0.95);
+  animation: fadeScaleIn 0.8s ease-in forwards;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.13);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: 0.8s ease;
+}
+.projects-container:hover {
+  width: 80%;
+}
+.pro-card {
+  margin-top: 10px;
+  background-color: transparent;
+}
+
+.project-cards {
+  display: flex;
+  gap: 30px;
+  margin: 10px;
+  align-items: center;
+  justify-content: center;
+}
+.card-img-top {
+  width: 150px;
+  height: 130px;
+  border-radius: 15px;
+}
+.card-title {
+  color: white;
+}
+.projectsname {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+.img-card {
+  padding: 5px;
+  border: 1px solid white;
+  box-shadow: 0 0 14px rgb(202, 187, 187);
+  border-radius: 15px;
+  transition: 0.3s ease;
+}
+.img-card:hover {
+  transform: scale(1.1);
+}
+.projectname {
+  text-align: center;
+  margin-top: 7px;
+  font-family: "Edu NSW ACT Hand Pre", cursive;
+}
+.card {
+  width: 50%;
+  height: 22.5em;
+  margin: auto;
+  background: #aca9a94b;
+  transition: 1s ease-in-out;
+  box-shadow: 0 0 14px rgb(202, 187, 187);
+  clip-path: polygon(
+    30px 0%,
+    100% 0,
+    100% calc(100% - 30px),
+    calc(100% - 30px) 100%,
+    0 100%,
+    0% 30px
+  );
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+  transform: scale(0.95);
+  animation: fadeScaleIn 0.8s ease-in forwards;
+  transition: 0.8s ease;
+}
+.card:hover {
+  width: 80%;
+}
+
+.card span {
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  display: block;
+  font-size: 1em;
+}
+
+.card .info {
+  font-weight: 400;
+  color: white;
+  display: block;
+  text-align: center;
+  font-size: 0.72em;
+}
+
+.card .img {
+  width: 4.8em;
+  height: 4.8em;
+  background: white;
+  border-radius: 15px;
+  margin: auto;
+}
+
+.card .share {
+  margin-top: 1em;
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+
+.card a {
+  color: white;
+  transition: 0.4s ease-in-out;
+}
+
+.card a:hover {
+  color: red;
+}
+
+.card button {
+  padding: 0.8em 1.7em;
+  display: block;
+  margin: auto;
+  border-radius: 25px;
+  border: none;
+  font-weight: bold;
+  background: #ffffff;
+  color: rgb(0, 0, 0);
+  transition: 0.4s ease-in-out;
+}
+
+.card button:hover {
+  background: #3654ff;
+  color: white;
+  cursor: pointer;
+}
+.contact-img {
+  width: 4.8em;
+  height: 4.8em;
+  border-radius: 15px;
+  margin: auto;
+}
+.about-me {
+  font-family: "Edu NSW ACT Hand Pre", cursive;
+  margin-bottom: 10px;
+  color: #7788e5;
+  margin: auto;
+  font-weight: bold;
+}
+
+.footercard {
+  position: relative;
+  width: 50%;
+  height: 60px;
+  background: #22222200;
+  border-radius: 12px;
+  overflow: hidden;
+  z-index: 1;
+  color: white;
+  padding: 20px;
+  box-shadow: 0 0 10px #000;
+  margin: auto;
+  margin-bottom: 30px;
+  text-align: center;
+  color: white;
+  font-family: "Edu NSW ACT Hand Pre", cursive;
+  transform: scale(0.95);
+  animation: fadeScaleIn 1.8s ease-in forwards;
+  transition: 0.9s ease;
+}
+.footercard:hover {
+  width: 80%;
+}
+
+.footercard::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: conic-gradient(from 0deg, #00f, #0ff, #0f0, #ff0, #f00, #00f);
+  z-index: -1;
+  animation: rotate 4s linear infinite;
+  border-radius: 14px;
+}
+
+.footercard::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  background: #605b2d;
+  z-index: -1;
+  border-radius: 10px;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
