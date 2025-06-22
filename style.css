@@ -249,6 +249,70 @@ button:hover {
   gap: 4rem;
   padding: 1rem;
 }
+.projects-container {
+  width: 80%;
+  margin: auto;
+  border: 1px solid white;
+  box-shadow: 0 0 14px rgb(202, 187, 187);
+  border-radius: 15px;
+  margin-top: 2rem;
+  margin-bottom: 20px;
+  transform: scale(0.95);
+  animation: fadeScaleIn 0.8s ease-in forwards;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.13);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: 0.8s ease;
+}
+.projects-container:hover {
+  width: 95%;
+}
+.pro-card {
+  background-color: transparent;
+}
+
+.project-cards {
+  display: flex;
+  flex-direction: row;
+  gap: 4rem;
+  margin: 10px;
+  align-items: center;
+  justify-content: center;
+}
+.card-img-top {
+  width: 150px;
+  height: 130px;
+  border-radius: 15px;
+}
+.card-title {
+  color: white;
+}
+.projectsname {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+.img-card {
+  padding: 5px;
+  border: 1px solid white;
+  box-shadow: 0 0 14px rgb(202, 187, 187);
+  border-radius: 15px;
+  transition: 0.3s ease;
+}
+.img-card:hover {
+  transform: scale(1.1);
+}
+.projectname {
+  text-align: center;
+  margin-top: 7px;
+  font-family: "Edu NSW ACT Hand Pre", cursive;
+}
+
 @media (max-width: 480px) {
   * {
     margin: 0;
@@ -390,76 +454,14 @@ button:hover {
   .project-cards {
     display: flex;
     flex-direction: column;
-    margin: 0px;
-    gap: 1px;
+    gap: 1rem;
+  }
+  .pro-card {
+    margin-top: 0px;
   }
   .footercard-text {
     font-size: 10px;
   }
-}
-
-.projects-container {
-  width: 80%;
-  margin: auto;
-  border: 1px solid white;
-  box-shadow: 0 0 14px rgb(202, 187, 187);
-  border-radius: 15px;
-  margin-top: 2rem;
-  margin-bottom: 20px;
-  transform: scale(0.95);
-  animation: fadeScaleIn 0.8s ease-in forwards;
-  /* From https://css.glass */
-  background: rgba(255, 255, 255, 0.13);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  transition: 0.8s ease;
-}
-.projects-container:hover {
-  width: 95%;
-}
-.pro-card {
-  margin-top: 10px;
-  background-color: transparent;
-}
-
-.project-cards {
-  display: flex;
-  gap: 4rem;
-  margin: 10px;
-  align-items: center;
-  justify-content: center;
-}
-.card-img-top {
-  width: 150px;
-  height: 130px;
-  border-radius: 15px;
-}
-.card-title {
-  color: white;
-}
-.projectsname {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 10px;
-}
-.img-card {
-  padding: 5px;
-  border: 1px solid white;
-  box-shadow: 0 0 14px rgb(202, 187, 187);
-  border-radius: 15px;
-  transition: 0.3s ease;
-}
-.img-card:hover {
-  transform: scale(1.1);
-}
-.projectname {
-  text-align: center;
-  margin-top: 7px;
-  font-family: "Edu NSW ACT Hand Pre", cursive;
 }
 
 .footercard {
@@ -470,7 +472,7 @@ button:hover {
   overflow: hidden;
   z-index: 1;
   color: white;
-  padding: 20px;
+  padding: 21px;
   box-shadow: 0 0 10px #000;
   margin: auto;
   margin-bottom: 30px;
