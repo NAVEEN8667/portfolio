@@ -7,6 +7,13 @@ body {
   background-color: #000000;
   color: white;
 }
+a {
+  text-decoration: none;
+  color: white;
+}
+a:hover {
+  color: white;
+}
 h2 {
   color: #fff;
 }
@@ -39,10 +46,13 @@ h2 {
   border-radius: 20px;
   margin: auto;
   list-style: none;
-  margin-top: 4rem;
+  margin-top: 3rem;
   box-shadow: 0 0 14px rgb(202, 187, 187);
-  transform: scale(0.95);
-  animation: fadeScaleIn 1.8s ease-in forwards;
+
+  transition: 0.8s ease;
+}
+.navbar-cont:hover {
+  transform: scale(1.3);
 }
 .navbar-contact {
   margin-right: 1.5rem;
@@ -64,12 +74,14 @@ h2 {
   cursor: pointer;
 }
 .typing {
-  width: 0;
+  width: fit-content;
+  font-family: "Edu NSW ACT Hand Pre", cursive;
+  font-size: 2rem;
   font-size: 2rem;
   overflow: hidden;
   white-space: nowrap;
   border-right: none;
-  animation: typing 5s steps(30, end) forwards, blink 0.75s step-end infinite;
+  animation: typing 9s steps(30, end) forwards, blink 0.75s step-end infinite;
 }
 
 @keyframes typing {
@@ -77,7 +89,7 @@ h2 {
     width: 0;
   }
   to {
-    width: 22ch;
+    width: 40ch;
   } /* Adjust to match text length */
 }
 
@@ -86,28 +98,24 @@ h2 {
     border-color: transparent;
   }
 }
-.typing {
-  font-family: "Edu NSW ACT Hand Pre", cursive;
-  font-size: 2rem;
-}
+
 .name {
   color: #7788e5;
   font-size: 2.5rem;
 }
 .main-info {
-  width: 50%;
-  height: 50%;
+  width: 80%;
+  height: 85vh;
   margin: auto;
   border: 1px solid white;
   box-shadow: 0 0 14px rgb(202, 187, 187);
   border-radius: 15px;
   display: flex;
-  justify-content: space-between;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
   align-items: center;
   margin-top: 2rem;
-  transform: scale(0.95);
-  animation: fadeScaleIn 0.8s ease-in forwards;
-  /* From https://css.glass */
+  transition: 0.8s ease;
   background: rgba(255, 255, 255, 0.13);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -115,31 +123,42 @@ h2 {
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
+.main-info:hover {
+  width: 95%;
+}
 @keyframes fadeScaleIn {
   to {
     opacity: 1;
     transform: scale(1);
   }
 }
+.main-info-img {
+  width: 32%;
+  height: 360px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid white;
+  box-shadow: 0 0 14px rgb(202, 187, 187);
+  margin-right: 30px;
+  border-radius: 15px;
+  margin-left: 5rem;
+  transition: 0.8s ease;
+}
 .main-info-text {
   width: 50%;
-  height: 50%;
+  height: 60%;
   padding: 2rem;
   margin-right: 1rem;
 }
 
-.img-fluid {
-  width: 180px;
-  height: 170px;
-  border-radius: 50%;
-  margin: auto;
-  border: 3px solid white;
-  margin-left: 6rem;
-  box-shadow: 0 0 14px rgb(202, 187, 187);
-  transition: 0.3s ease;
+.profile-img {
+  width: 360px;
+  height: 330px;
+  border-radius: 15px;
 }
-.img-fluid:hover {
-  transform: scale(1.6);
+.main-info-img:hover {
+  transform: scale(1.1);
 }
 
 .button {
@@ -151,16 +170,24 @@ h2 {
   border-radius: 11px;
   text-align: center;
   transition: all 0.6s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-.button:hover {
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+button:hover {
   background-color: #3654ff;
   cursor: pointer;
 }
 .skills-container {
   border: 1px solid white;
   border-radius: 15px;
-  width: 50%;
+  width: 80%;
   margin: auto;
   margin-top: 2rem;
   box-shadow: 0 0 14px rgb(202, 187, 187);
@@ -173,9 +200,23 @@ h2 {
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: 0.8s ease;
+}
+.skills-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.skills-text {
+  font-family: "Edu NSW ACT Hand Pre", cursive;
+  margin-top: 4px;
+}
+.skills-container:hover {
+  width: 95%;
 }
 .skills-img {
-  border: 1px solid black;
+  border: 5px solid black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -186,6 +227,7 @@ h2 {
   background-color: white;
   transition: 0.3s ease;
 }
+
 .skills-img:hover {
   transform: scale(1.1);
 }
@@ -204,7 +246,7 @@ h2 {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 4rem;
   padding: 1rem;
 }
 @media (max-width: 480px) {
@@ -213,6 +255,17 @@ h2 {
     padding: 0;
     box-sizing: border-box;
   }
+  body {
+    width: 100%;
+  }
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 27ch;
+    } /* Adjust to match text length */
+  }
   .navbar-cont {
     margin: auto;
     width: 50%;
@@ -220,9 +273,10 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 5px;
+    gap: 8px;
     padding: 0;
     margin-top: 2rem;
+    padding: 15px;
   }
   .separator {
     transform: rotate(90deg);
@@ -250,10 +304,8 @@ h2 {
   }
   .main-info {
     width: 80%;
-    height: 50%;
+    height: 70%;
     margin: auto;
-    border: 1px solid white;
-    box-shadow: 0 0 14px rgb(202, 187, 187);
     border-radius: 15px;
     display: flex;
     flex-direction: column;
@@ -269,28 +321,48 @@ h2 {
     width: 100%;
     height: 50%;
     justify-content: center;
-    align-items: ;
+    align-items: center;
+  }
+  .main-info-img {
+    width: 150px;
+    height: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 20px;
+  }
+  .profile-img {
+    width: 140px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   .typing {
     font-size: 1rem;
+    margin: auto;
+  }
+  .main-content {
+    font-size: 12px;
   }
   .name {
     font-size: 1rem;
   }
-  .img-fluid {
-    width: 150px;
-    height: 150px;
-    margin-left: 0;
-    margin-top: 1rem;
-  }
+
   .skills-container {
     width: 80%;
     margin: auto;
     margin-top: 2rem;
     border-radius: 15px;
-    box-shadow: 0 0 14px rgb(202, 187, 187);
+
     transform: scale(0.95);
     animation: fadeScaleIn 0.8s ease-in forwards;
+    transition: 0.8s ease;
+  }
+  .skills-container:hover {
+    width: 95%;
   }
   .image-container {
     display: flex;
@@ -312,9 +384,22 @@ h2 {
     align-items: center;
     justify-content: center;
   }
+  .projects-container {
+    width: 80%;
+  }
+  .project-cards {
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    gap: 1px;
+  }
+  .footercard-text {
+    font-size: 10px;
+  }
 }
+
 .projects-container {
-  width: 50%;
+  width: 80%;
   margin: auto;
   border: 1px solid white;
   box-shadow: 0 0 14px rgb(202, 187, 187);
@@ -333,7 +418,7 @@ h2 {
   transition: 0.8s ease;
 }
 .projects-container:hover {
-  width: 80%;
+  width: 95%;
 }
 .pro-card {
   margin-top: 10px;
@@ -342,7 +427,7 @@ h2 {
 
 .project-cards {
   display: flex;
-  gap: 30px;
+  gap: 4rem;
   margin: 10px;
   align-items: center;
   justify-content: center;
@@ -376,110 +461,11 @@ h2 {
   margin-top: 7px;
   font-family: "Edu NSW ACT Hand Pre", cursive;
 }
-.card {
-  width: 50%;
-  height: 22.5em;
-  margin: auto;
-  background: #aca9a94b;
-  transition: 1s ease-in-out;
-  box-shadow: 0 0 14px rgb(202, 187, 187);
-  clip-path: polygon(
-    30px 0%,
-    100% 0,
-    100% calc(100% - 30px),
-    calc(100% - 30px) 100%,
-    0 100%,
-    0% 30px
-  );
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 30px;
-  transform: scale(0.95);
-  animation: fadeScaleIn 0.8s ease-in forwards;
-  transition: 0.8s ease;
-}
-.card:hover {
-  width: 80%;
-}
-
-.card span {
-  font-weight: bold;
-  color: white;
-  text-align: center;
-  display: block;
-  font-size: 1em;
-}
-
-.card .info {
-  font-weight: 400;
-  color: white;
-  display: block;
-  text-align: center;
-  font-size: 0.72em;
-}
-
-.card .img {
-  width: 4.8em;
-  height: 4.8em;
-  background: white;
-  border-radius: 15px;
-  margin: auto;
-}
-
-.card .share {
-  margin-top: 1em;
-  display: flex;
-  justify-content: center;
-  gap: 1em;
-}
-
-.card a {
-  color: white;
-  transition: 0.4s ease-in-out;
-}
-
-.card a:hover {
-  color: red;
-}
-
-.card button {
-  padding: 0.8em 1.7em;
-  display: block;
-  margin: auto;
-  border-radius: 25px;
-  border: none;
-  font-weight: bold;
-  background: #ffffff;
-  color: rgb(0, 0, 0);
-  transition: 0.4s ease-in-out;
-}
-
-.card button:hover {
-  background: #3654ff;
-  color: white;
-  cursor: pointer;
-}
-.contact-img {
-  width: 4.8em;
-  height: 4.8em;
-  border-radius: 15px;
-  margin: auto;
-}
-.about-me {
-  font-family: "Edu NSW ACT Hand Pre", cursive;
-  margin-bottom: 10px;
-  color: #7788e5;
-  margin: auto;
-  font-weight: bold;
-}
 
 .footercard {
   position: relative;
-  width: 50%;
+  width: 80%;
   height: 60px;
-  background: #22222200;
   border-radius: 12px;
   overflow: hidden;
   z-index: 1;
@@ -519,7 +505,12 @@ h2 {
   left: 2px;
   right: 2px;
   bottom: 2px;
-  background: #605b2d;
+  background: rgb(24, 31, 18);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+
   z-index: -1;
   border-radius: 10px;
 }
@@ -531,4 +522,239 @@ h2 {
   100% {
     transform: rotate(360deg);
   }
+}
+/* Compact Contact Card CSS */
+#contact {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+}
+.contact-card:hover {
+  width: 95%;
+}
+.contact-card {
+  width: 80%;
+  display: flex;
+  background: rgba(255, 255, 255, 0.158);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  overflow: hidden;
+  transition: 0.8s ease;
+}
+
+/* Contact Info Section */
+.contact-info {
+  flex: 1;
+  padding: 2.5rem;
+
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.contact-title {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  font-family: "Edu NSW ACT Hand Pre", cursive;
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+}
+
+.info-item i {
+  font-size: 1.2rem;
+  color: #6a11cb;
+  margin-right: 1rem;
+  margin-top: 0.2rem;
+}
+
+.info-item h3 {
+  font-size: 0.9rem;
+  margin: 0 0 0.3rem 0;
+  color: #777;
+  font-weight: 600;
+}
+
+.info-item p,
+.info-item a {
+  margin: 0;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.info-item a:hover {
+  color: #6a11cb;
+}
+
+/* Contact Form Section */
+.contact-form {
+  flex: 1;
+  padding: 2.5rem;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem 0;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  background: transparent;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+.form-group textarea {
+  resize: none;
+}
+
+.form-group label {
+  position: absolute;
+  top: 0.75rem;
+  left: 0;
+  color: #777;
+  pointer-events: none;
+  transition: all 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group input:valid,
+.form-group textarea:valid {
+  outline: none;
+  border-bottom-color: #6a11cb;
+}
+
+.form-group input:focus ~ label,
+.form-group textarea:focus ~ label,
+.form-group input:valid ~ label,
+.form-group textarea:valid ~ label {
+  top: -0.9rem;
+  font-size: 0.8rem;
+  color: #6a11cb;
+}
+
+.submit-btn {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(106, 17, 203, 0.3);
+}
+
+.submit-btn i {
+  margin-left: 0.5rem;
+  transition: transform 0.3s;
+}
+
+.submit-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(106, 17, 203, 0.4);
+}
+
+.submit-btn:hover i {
+  transform: translateX(3px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 900px) {
+  .contact-card {
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .contact-info {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  }
+}
+
+@media (max-width: 500px) {
+  .contact-info,
+  .contact-form {
+    padding: 1.5rem;
+  }
+
+  .contact-title {
+    font-size: 1.5rem;
+  }
+}
+/* CSS with all white text and "Let's Connect" header */
+.contact-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.contact-card {
+  width: 80%;
+  display: flex;
+  background: rgba(255, 255, 255, 0.13);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  overflow: hidden;
+  color: #fff;
+}
+
+.contact-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  position: relative;
+  display: inline-block;
+}
+
+.contact-title::after {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 3px;
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  bottom: -10px;
+  left: 0;
+}
+
+/* Rest of your CSS remains the same with white text */
+.info-item h3 {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.info-item p,
+.info-item a {
+  color: #fff;
+}
+
+.form-group label {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.form-group input,
+.form-group textarea {
+  color: #fff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
