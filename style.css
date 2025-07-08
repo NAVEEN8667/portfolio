@@ -174,23 +174,7 @@ h2 {
   justify-content: center;
   align-items: center;
 }
-.button-text-decoration-none {
-  background-color: #ffffff00;
-  color: #fff;
-  width: 8.5em;
-  height: 2.9em;
-  border: #3654ff 0.2em solid;
-  border-radius: 11px;
-  text-align: center;
-  transition: all 0.6s ease;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.button-text-decoration-none:hover {
-  background-color: #3654ff;
-  cursor: pointer;
-}
+
 .button-container {
   display: flex;
   justify-content: center;
